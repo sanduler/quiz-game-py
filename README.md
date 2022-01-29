@@ -32,7 +32,7 @@
 <h3 align="center">Quiz Game</h3>
 
   <p align="center">
-    Quiz game uses OOP to give the user the ability to import the questions from https://opentdb.com/. The user can
+    Quiz game uses OOP to give the user the ability to import the questions from https://opentdb.com/ API. The user can
     generate questions and paste them into the data.py file. The program will then run the questions and provide the
     user the final trivia score. The program allows for easy maintainability and modification. 
     <br />
