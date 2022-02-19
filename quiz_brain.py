@@ -23,8 +23,9 @@ class QuizBrain:
         self.current = self.question_list[self.question_number]
         self.question_number += 1
         q_text = html.unescape(self.current.text)
-        user_answer = input(f"{self.question_number}:{q_text}(True/False): ")
-        self.check_answer(user_answer, self.current.answer)
+        return f"Q.{self.question_number}: {q_text}"
+        # user_answer = input(f"{self.question_number}:{q_text}(True/False): ")
+        # self.check_answer(user_answer, self.current.answer)
 
     def check_answer(self, usr_ans, cr_quest_answer):
         """check the users input by comparing the users answer to the actual answer. still_has_questions

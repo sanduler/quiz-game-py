@@ -22,7 +22,7 @@ for question in question_data:
 
 # initialize the QuizBrain class by passing the question bank
 quiz = QuizBrain(question_bank)
-quiz_ui = QuizUI()
+quiz_ui = QuizUI(quiz)
 
 # if the quiz still has questions the continue to the next question
 # while quiz.still_has_questions():

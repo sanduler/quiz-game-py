@@ -1,8 +1,13 @@
 from tkinter import *
+from quiz_brain import QuizBrain
 THEME_COLOR = "#375362"
 
+
 class QuizUI:
-    def __init__(self):
+    def __init__(self, quiz_brain: QuizBrain):
+        self.quiz = quiz_brain
+        self.wrong_button = None
+        self.right_button = None
         self.score = 0
         self.window = Tk()
         self.window.title("Quizzer")
@@ -16,6 +21,7 @@ class QuizUI:
             150,
             125,
             text="Some question",
+            width=280,
             fill=THEME_COLOR,
             font=("Arial", 20, "italic")
         )
@@ -25,6 +31,8 @@ class QuizUI:
         right_image = PhotoImage(file="./img/true.png")
         wrong_image = PhotoImage(file="./img/false.png")
         self.ui_buttons(right_image, wrong_image)
+
+        self.get_new_question()
         # center the window upon opening
         self.window.eval('tk::PlaceWindow . center')
         # loop the main window to stay open
@@ -36,3 +44,7 @@ class QuizUI:
         self.wrong_button = Button(image=incorrect_image)
         self.wrong_button.config(highlightthickness=0, bd=0)
         self.wrong_button.grid(row=2, column=1)
+
+    def get_new_question(self):
+        ques_text = self.quiz.next_question()
+        self.canvas.itemconfig(self.question_text, text=ques_text)
