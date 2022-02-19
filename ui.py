@@ -20,7 +20,6 @@ class QuizUI:
             font=("Arial", 20, "italic")
         )
         self.canvas.grid(row=1, column=0, columnspan=2, pady=50)
-
         # pull the two images for the button and pass them into the ui_buttons function
         right_image = PhotoImage(file="./img/true.png")
         wrong_image = PhotoImage(file="./img/false.png")
