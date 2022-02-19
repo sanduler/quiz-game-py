@@ -1,5 +1,5 @@
 # Ruben Sanduleac
-# QuizBrain class used to intilize the inital score, check if there are more
+# QuizBrain class used to initialize the initial score, check if there are more
 # questions in the list. Continue to the next question and check the answer if its
 # valid.
 
@@ -13,12 +13,12 @@ class QuizBrain:
 
     def still_has_questions(self):
         """check there is still questions by comparing the length of the list to the current length
-        qeustion number"""
+        question number"""
         return self.question_number < len(self.question_list)
 
     def next_question(self):
         """check on which question we are currently, then increment the question.
-        Receive the users answer to then check the answer in the check_asnwer"""
+        Receive the users answer to then check the answer in the check_answer"""
         current = self.question_list[self.question_number]
         self.question_number += 1
         user_answer = input(f"{self.question_number}:{current.text}(True/False): ")

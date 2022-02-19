@@ -4,10 +4,7 @@
 from question_model import Question
 from data import question_data
 from quiz_brain import QuizBrain
-from background import logo, end
 
-# print the logo
-print(logo)
 # create a blank list for the questions
 question_bank = []
 # use a for loop to go through every single question and answer in the data.py
@@ -16,20 +13,19 @@ for question in question_data:
     question_text = question["question"]
     # finds the 'correct_answer' key from data.py
     question_answer = question["correct_answer"]
-    # pass the question and the answer to the Question class and intialize the variable
+    # pass the question and the answer to the Question class and initialize the variable
     new_question = Question(question_text, question_answer)
     # add the return from the class back to the list 'question_bank'
     question_bank.append(new_question)
 
+
 # initialize the QuizBrain class by passing the question bank
 quiz = QuizBrain(question_bank)
 
-# if the quiz still has questions the contienue to the next question
+# if the quiz still has questions the continue to the next question
 while quiz.still_has_questions():
     quiz.next_question()
 
-# print the conclusion and the logo
-print(end)
 print("You've completed the Quiz")
 # print the final score
 print(f"You're final score: {quiz.score}/{quiz.question_number}")
