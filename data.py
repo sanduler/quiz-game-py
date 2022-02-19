@@ -1,3 +1,6 @@
+# Ruben Sanduleac
+# Description: The data file uses the question bank found from OpenTrivia API.
+#              The questions are loaded and passed into the respective classes from
 import requests
 
 response = requests.get(url="https://opentdb.com/api.php?amount=10&type=boolean")
