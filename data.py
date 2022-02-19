@@ -3,8 +3,6 @@ import requests
 response = requests.get(url="https://opentdb.com/api.php?amount=10&type=boolean")
 response.raise_for_status()
 data = response.json()
-# question_data = []
-
 question_data = (data["results"])
 # print(data["results"])
 # print(question_data)
@@ -43,7 +41,8 @@ question_data = (data["results"])
 #         "category": "Science: Computers",
 #         "type": "boolean",
 #         "difficulty": "medium",
-#         "question": "All program codes have to be compiled into an executable file in order to be run. This file can then be executed on any machine.",
+#         "question": "All program codes have to be compiled into an executable file in order to be run.
+#         This file can then be executed on any machine.",
 #         "correct_answer": "False",
 #         "incorrect_answers": [
 #             "True"
