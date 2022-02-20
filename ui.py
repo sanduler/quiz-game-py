@@ -1,5 +1,6 @@
 from tkinter import *
 from quiz_brain import QuizBrain
+import data
 THEME_COLOR = "#375362"
 
 
@@ -39,12 +40,20 @@ class QuizUI:
         self.window.mainloop()
 
     def ui_buttons(self, correct_image, incorrect_image):
-        self.right_button = Button(image=correct_image, highlightthickness=0, bd=0)
+        self.right_button = Button(image=correct_image, highlightthickness=0, bd=0, command=self.is_true)
         self.right_button.grid(row=2, column=0)
         self.wrong_button = Button(image=incorrect_image)
-        self.wrong_button.config(highlightthickness=0, bd=0)
+        self.wrong_button.config(highlightthickness=0, bd=0, command=self.is_false)
         self.wrong_button.grid(row=2, column=1)
 
     def get_new_question(self):
         ques_text = self.quiz.next_question()
         self.canvas.itemconfig(self.question_text, text=ques_text)
+
+    def is_true(self):
+        self.quiz.check_answer("True")
+        self.get_new_question()
+
+    def is_false(self):
+        self.quiz.check_answer("False")
+        self.get_new_question()
