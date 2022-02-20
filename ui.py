@@ -1,7 +1,10 @@
 from tkinter import *
+
+import feedback as feedback
+
 from quiz_brain import QuizBrain
 import data
-THEME_COLOR = "#375362"
+THEME_COLOR = "#406882"
 
 
 class QuizUI:
@@ -15,6 +18,7 @@ class QuizUI:
         self.window.configure(bg=THEME_COLOR)
         self.window.config(padx=20, pady=20)
         self.score_label = Label(text=f"Score: {self.score}")
+        self.score_label.config(font=("Arial", 20, "italic"))
         self.score_label.config(bg=THEME_COLOR, fg="white")
         self.score_label.grid(row=0, column=1)
         self.canvas = Canvas(width=300, height=250, bg="white")
@@ -32,7 +36,6 @@ class QuizUI:
         right_image = PhotoImage(file="./img/true.png")
         wrong_image = PhotoImage(file="./img/false.png")
         self.ui_buttons(right_image, wrong_image)
-
         self.get_new_question()
         # center the window upon opening
         self.window.eval('tk::PlaceWindow . center')
@@ -47,13 +50,29 @@ class QuizUI:
         self.wrong_button.grid(row=2, column=1)
 
     def get_new_question(self):
-        ques_text = self.quiz.next_question()
-        self.canvas.itemconfig(self.question_text, text=ques_text)
+        self.canvas.config(bg="white")
+        if self.quiz.still_has_questions():
+            self.score_label.config(text=f"Score: {self.quiz.score}")
+            ques_text = self.quiz.next_question()
+            self.canvas.itemconfig(self.question_text, text=ques_text)
+        else:
+            self.canvas.itemconfig(self.question_text,
+                                   text=f"You reached the end of the Quiz!\n"
+                                        f"Final Score: {self.quiz.score}/{self.quiz.question_number}")
+            self.wrong_button.config(state="disabled")
+            self.right_button.config(state="disabled")
 
     def is_true(self):
-        self.quiz.check_answer("True")
-        self.get_new_question()
+        answer = self.quiz.check_answer("True")
+        self.feedback(answer)
 
     def is_false(self):
-        self.quiz.check_answer("False")
-        self.get_new_question()
+        answer = self.quiz.check_answer("False")
+        self.feedback(answer)
+
+    def feedback(self, ans:bool):
+        if ans:
+            self.canvas.config(bg="green")
+        else:
+            self.canvas.config(bg="red")
+        self.window.after(800, self.get_new_question)
