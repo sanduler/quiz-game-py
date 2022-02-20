@@ -3,9 +3,12 @@
 # questions in the list. Continue to the next question and check the answer if its
 # valid.
 import html
+
+
 class QuizBrain:
     """Default constructor used to initialize the score to '0', question number to '0'
     and set the question in the list to self"""
+
     def __init__(self, question_in_list):
         self.current = None
         self.question_number = 0
@@ -36,4 +39,3 @@ class QuizBrain:
             return True
         else:
             return False
-
