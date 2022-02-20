@@ -4,6 +4,8 @@
 # Quiz.
 from tkinter import *
 from quiz_brain import QuizBrain
+import sys
+import os
 
 THEME_COLOR = "#406882"
 
@@ -15,10 +17,11 @@ class QuizUI:
 
     def __init__(self, quiz_brain: QuizBrain):
         """Constructor initializes the window, canvas, score labels, question text
-        The constuctor also call the ui buttons method to create buttons"""
+        The constructor also call the ui buttons method to create buttons"""
         # create a quiz_brain object from QuizBrain class that gets passed from the main class
+        self.python = None
         self.quiz = quiz_brain
-        # intilizes the buttons to do nothing
+        # initializes the buttons to do nothing
         self.wrong_button = None
         self.right_button = None
         # set the score initially to 0
