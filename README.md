@@ -33,7 +33,7 @@
 
   <p align="center">
     Quiz game uses OOP to give the user the ability to import the questions from https://opentdb.com/ API. The user can
-    generate questions and paste them into the data.py file. The program will then run the questions and provide the
+    answer True/False questions using the Tkinter GUI. The Quiz Brain will then run the questions and provide the
     user the final trivia score. The program allows for easy maintainability and modification. 
     <br />
     <a href="https://github.com/sanduler/quiz-game-py"><strong>Explore the docs »</strong></a>
@@ -121,6 +121,7 @@ This is an example of how to list things you need to use the software and how to
 <a href="https://github.com/sanduler/coffee-machine-py">
     <img src="img/img1.png" alt="Pictures">
     <img src="img/img2.png" alt="Pictures">
+    <img src="img/img4.png" alt="Pictures">
   </a>
 
 _For more examples, please refer to the [Documentation](https://example.com)_
