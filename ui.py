@@ -4,7 +4,7 @@ import feedback as feedback
 
 from quiz_brain import QuizBrain
 import data
-THEME_COLOR = "#375362"
+THEME_COLOR = "#406882"
 
 
 class QuizUI:
@@ -18,6 +18,7 @@ class QuizUI:
         self.window.configure(bg=THEME_COLOR)
         self.window.config(padx=20, pady=20)
         self.score_label = Label(text=f"Score: {self.score}")
+        self.score_label.config(font=("Arial", 20, "italic"))
         self.score_label.config(bg=THEME_COLOR, fg="white")
         self.score_label.grid(row=0, column=1)
         self.canvas = Canvas(width=300, height=250, bg="white")
