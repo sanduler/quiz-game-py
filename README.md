@@ -118,9 +118,9 @@ This is an example of how to list things you need to use the software and how to
 ## Usage
 
 <p align="center"><a>Pictures of the game in actions are shown:</a></p>
-<a href="https://github.com/sanduler/coffee-machine-py">
+<a href="https://github.com/sanduler/quiz-game-py">
     <img src="img/img1.png" alt="Pictures">
-    <img src="img/img2.png" alt="Pictures">
+    <img src="img/img5.png" alt="Pictures">
     <img src="img/img4.png" alt="Pictures">
   </a>
 
