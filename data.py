@@ -4,6 +4,7 @@
 import requests
 NUMBER_OF_QUESTIONS = 10
 
+# parameters for the api requested
 parameters = {
     "amount": NUMBER_OF_QUESTIONS,
     "type": "boolean",
