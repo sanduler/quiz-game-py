@@ -21,7 +21,7 @@ def main():
         # add the return from the class back to the list 'question_bank'
         question_bank.append(new_question)
 
-    # initialize the QuizBrain class by passing the question bank
+    # initialize the QuizBrainn class by passing the question bank
     quiz = QuizBrain(question_bank)
     quiz_ui = QuizUI(quiz)
 
